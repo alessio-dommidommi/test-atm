@@ -1,0 +1,39 @@
+package net.asforil.atmRest.service;
+
+import java.util.Arrays;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
+import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestTemplate;
+
+import net.asforil.atmRest.model.Atm;
+
+@Service
+public class AtmService {
+	
+	
+	@Autowired	
+	private RestTemplate restTemplate;
+	
+    private String ListAtmUrl = "https://www.dropbox.com/s/6fg0k2wxwrheyqk/ATMs?dl=1";
+	
+	
+	public List<Atm> getAllAtm() {	
+		
+		restTemplate.getMessageConverters().add(new MappingJackson2HttpMessageConverter());
+		
+		Atm[] arrayAtm = restTemplate.getForObject(ListAtmUrl, Atm[].class);
+		List<Atm> listAtm = Arrays.asList(arrayAtm);
+		return listAtm;
+	}
+	
+	
+	
+	
+	
+	
+
+}

@@ -1,0 +1,32 @@
+package net.asforil.atmRest.service;
+
+import java.util.Arrays;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestTemplate;
+
+import net.asforil.atmRest.model.Atm;
+
+@Service
+public class AtmServiceImpl implements AtmService{
+	
+	@Autowired	
+	private RestTemplate restTemplate;
+	
+	
+	private String listAtmUrl = "https://www.dropbox.com/s/6fg0k2wxwrheyqk/ATMs?dl=1";
+	
+	
+	public List<Atm> getAllAtm() {
+		Atm[] arrayAtm = restTemplate.getForObject(listAtmUrl, Atm[].class);
+		List<Atm> listAtm = Arrays.asList(arrayAtm);
+		return listAtm;
+	}
+	
+	
+	
+	
+
+}

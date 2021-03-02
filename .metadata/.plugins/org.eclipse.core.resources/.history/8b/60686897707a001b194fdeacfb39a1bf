@@ -1,0 +1,5 @@
+package net.asforil.atmRest.service;
+
+public class AtmServiceImpl {
+
+}

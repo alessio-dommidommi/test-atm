@@ -1,0 +1,6 @@
+INDEX VERSION 1.4+C:\Users\aless\coding\corso java\PROGETTI\test colloquio bancomat\eclipse-ws-atmRest\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+3237731678.index
+3340358504.index
+1744513150.index
+2381267383.index
+2559898323.index

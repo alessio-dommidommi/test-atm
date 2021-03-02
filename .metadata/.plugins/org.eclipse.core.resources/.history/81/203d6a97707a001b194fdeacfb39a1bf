@@ -1,0 +1,5 @@
+package net.asforil.atmRest.controller;
+
+public class AtmController {
+
+}
